@@ -2,328 +2,349 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Barbarshop � Elegant Style for Modern Men</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>barbarshop — Premium Barbershop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="logo-mark"></span>
-        <span class="logo-text">barbar<span class="logo-accent">shop</span></span>
+  <!-- ===================== CURSOR GLOW ===================== -->
+  <div id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" role="dialog" aria-label="Loading screen">
+    <div class="loader-inner">
+      <p class="loader-eyebrow">Est. 2024</p>
+      <h1 class="loader-logo">barbarshop</h1>
+      <div class="loader-line-wrap">
+        <div class="loader-line" id="loaderLine"></div>
       </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#pricelist" class="nav-link">Price List</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <p class="loader-hint" id="loaderHint">Tap anywhere to enter</p>
+    </div>
+  </div>
+
+  <!-- ===================== FLOATING WA ===================== -->
+  <a
+    href="https://wa.me/6285703423186?text=Halo%20Barbarshop%2C%20saya%20mau%20booking"
+    class="wa-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat WhatsApp"
+    title="Booking via WhatsApp"
+  >
+    <span class="wa-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.19-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.38A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.47-7.37c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.49-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="currentColor"/>
+      </svg>
+    </span>
+  </a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand">barbarshop</a>
+
+      <div class="nav-center">
+        <div class="live-status" id="liveStatus" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="status-text" id="statusText">–</span>
+        </div>
+        <div class="live-clock" id="liveClock" aria-label="Jam saat ini">00:00</div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home"      class="nav-link">Home</a></li>
+        <li><a href="#pricelist" class="nav-link">Price List</a></li>
+        <li><a href="#contact"   class="nav-link">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="hero-bg-lines"></div>
-    <div class="hero-container">
-      <div class="hero-content reveal">
-        <div class="hero-badge">Premium Barbershop</div>
-        <h1 class="hero-title">
-          <span class="title-thin">barbar</span><span class="title-gold">shop</span>
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero">
+
+    <!-- Subtle vertical texture lines -->
+    <div class="hero-texture" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-layout">
+
+      <!-- Left: text -->
+      <div class="hero-copy">
+
+        <p class="hero-kicker reveal">Premium Barbershop · Sejak 2024</p>
+
+        <h1 class="hero-headline reveal">
+          <em>barbarshop</em><br />
+          <span class="headline-thin">Elegant Style</span><br />
+          <span class="headline-gold">for Modern Men</span>
         </h1>
-        <p class="hero-tagline">gaya elegan ker lalaki, sanajan hirup can elegan</p>
-        <p class="hero-desc">
-          cukuran ker lalaki nu hayang ganteng maksimal, sanajan dompet minimal.
+
+        <p class="hero-desc reveal">
+          Dalam setiap proses, kami terus belajar dan berkembang — dengan satu
+          tujuan: memberikan yang terbaik untuk setiap orang yang datang.
         </p>
-        <div class="hero-cta">
-          <a href="https://wa.me/6285703423186?text=Halo%2C%20saya%20ingin%20booking%20di%20Barbarshop"
-             target="_blank" class="btn-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="none" style="flex-shrink:0">
-              <circle cx="16" cy="16" r="16" fill="rgba(255,255,255,0.2)"/>
-              <path fill="#fff" d="M22.5 9.5A9.47 9.47 0 0 0 16 7a9.5 9.5 0 0 0-8.22 14.24L7 25l3.87-.78A9.5 9.5 0 0 0 25.5 16a9.47 9.47 0 0 0-3-6.5zm-6.5 14.6a7.88 7.88 0 0 1-4.02-1.1l-.29-.17-2.97.6.63-2.9-.19-.3a7.9 7.9 0 1 1 6.84 3.87zm4.33-5.9c-.24-.12-1.4-.69-1.61-.77-.22-.08-.38-.12-.54.12s-.62.77-.76.93c-.14.16-.28.18-.52.06a6.56 6.56 0 0 1-1.94-1.2 7.27 7.27 0 0 1-1.34-1.67c-.14-.24 0-.37.1-.49.1-.1.24-.27.36-.4.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.4-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 2 .86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/>
-            </svg>
+
+        <!-- Quote block -->
+        <blockquote class="hero-quote reveal">
+          <div class="quote-line-top"></div>
+          <p>
+            "Aku tahu tanganku tak cukup besar untuk membahagiakan semua orang,
+            tapi aku ingin setiap langkahku memberi arti bagi mereka yang ada
+            di sekitarku."
+          </p>
+          <div class="quote-line-bottom"></div>
+        </blockquote>
+
+        <div class="hero-actions reveal">
+          <a
+            href="https://wa.me/6285703423186?text=Halo%20Barbarshop%2C%20mau%20booking"
+            class="btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >
             Booking via WhatsApp
+            <span class="btn-arrow">→</span>
           </a>
-          <a href="#pricelist" class="btn-ghost">Lihat Harga</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">6<span class="stat-plus">+</span></span>
-            <span class="stat-label">Pelanggan Puas</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-number">5<span class="stat-plus"></span></span>
-            <span class="stat-label">Rating</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-number">6</span>
-            <span class="stat-label">Layanan</span>
-          </div>
-        </div>
+
       </div>
 
-      <!-- BARBER POLE ANIMATION -->
-      <div class="pole-wrapper reveal">
-        <div class="pole-glow"></div>
-        <div class="pole-container">
-          <div class="pole-cap top-cap">
-            <div class="cap-shine"></div>
-          </div>
-          <div class="pole-body">
-            <div class="pole-stripes">
-              <div class="stripe-inner"></div>
-            </div>
-            <div class="pole-overlay"></div>
-          </div>
-          <div class="pole-cap bottom-cap">
-            <div class="cap-shine"></div>
-          </div>
+      <!-- Right: barber pole -->
+      <div class="pole-wrap reveal" aria-hidden="true">
+        <div class="pole-aura"></div>
+        <div class="pole-top-cap"></div>
+        <div class="pole-cylinder">
+          <div class="pole-stripe-track"></div>
+          <div class="pole-sheen"></div>
         </div>
-        <div class="pole-base"></div>
-        <div class="pole-label"></div>
+        <div class="pole-bottom-cap"></div>
+        <div class="pole-pedestal"></div>
       </div>
+
     </div>
 
-    <div class="hero-scroll-hint">
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
       <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
+
   </section>
 
-  <!-- ===== DIVIDER ===== -->
-  <div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-mark"></div>
-    <div class="divider-line"></div>
+  <!-- ===================== LUXURY DIVIDER ===================== -->
+  <div class="lux-divider" data-divider aria-hidden="true">
+    <div class="lux-divider-line"></div>
+    <span class="lux-divider-mark">✦</span>
+    <div class="lux-divider-line"></div>
   </div>
 
-  <!-- ===== PRICE LIST ===== -->
-  <section class="pricelist" id="pricelist">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">Transparansi Harga</p>
-        <h2 class="section-title">List Harga Barbarshop <span class="emoji-pole"></span></h2>
-        <p class="section-subtitle">Harga jujur, kualitas nyata. Tidak ada biaya tersembunyi.</p>
-      </div>
+  <!-- ===================== PRICE LIST ===================== -->
+  <section id="pricelist" class="section">
+    <div class="section-wrap">
 
-      <div class="price-grid">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">Transparan & Terjangkau</p>
+        <h2 class="section-title">
+          List Harga <em>Barbarshop</em> 💈
+        </h2>
+        <p class="section-note">
+          Harga terbaik, hasil yang memukau. Tidak ada biaya tersembunyi.
+        </p>
+      </header>
 
-        <div class="price-card reveal">
-          <div class="card-number">01</div>
-          <div class="card-content">
-            <h3 class="card-title">cukur biasa</h3>
-            <p class="card-desc">dewasa (sesuai request)</p>
+      <div class="price-list">
+
+        <div class="price-row reveal">
+          <div class="price-service">
+            <span class="service-name">Cukur Anak</span>
+            <span class="service-note">nu cerik nambah Rp 10.000</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">20.000</span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount">Rp 10.000 – 15.000</span>
         </div>
 
-        <div class="price-card reveal">
-          <div class="card-number">02</div>
-          <div class="card-content">
-            <h3 class="card-title">cukur anak</h3>
-            <p class="card-desc">nu cerik nambah Rp 10.000 </p>
+        <div class="price-row reveal">
+          <div class="price-service">
+            <span class="service-name">Cornrow</span>
+            <span class="service-note">tergantung rambut</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">10rb-15rb</span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount">Rp 150.000</span>
         </div>
 
-        <div class="price-card reveal featured">
-          <div class="featured-badge">Populer</div>
-          <div class="card-number">03</div>
-          <div class="card-content">
-            <h3 class="card-title">cornrow</h3>
-            <p class="card-desc">tergantung rambut makin banyak, makin lama, makin seru</p>
+        <div class="price-row reveal">
+          <div class="price-service">
+            <span class="service-name">Hair Perming</span>
+            <span class="service-note">tergantung rambut</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">200.000</span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount">Rp 150.000</span>
         </div>
 
-        <div class="price-card reveal">
-          <div class="card-number">04</div>
-          <div class="card-content">
-            <h3 class="card-title">hair perming</h3>
-            <p class="card-desc">tergantung rambut hasil keriting premium, tahan lama</p>
+        <div class="price-row reveal">
+          <div class="price-service">
+            <span class="service-name">Cat Rambut</span>
+            <span class="service-note">warna sesuai selera, hasil sesuai takdir 😄</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">100.000</span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount">Rp 100.000</span>
         </div>
 
-        <div class="price-card reveal">
-          <div class="card-number">05</div>
-          <div class="card-content">
-            <h3 class="card-title">cat rambut</h3>
-            <p class="card-desc">warna sesuai selera, hasil sesuai takdir </p>
+        <div class="price-row reveal">
+          <div class="price-service">
+            <span class="service-name">Styling Rambut</span>
+            <span class="service-note">buat apel? azzahhhh 😂</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">100.000</span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount">Rp 2.000</span>
         </div>
 
-        <div class="price-card reveal joke-card">
-          <div class="card-number">06</div>
-          <div class="card-content">
-            <h3 class="card-title">Styling Buat Apel</h3>
-            <p class="card-desc">Mau keliatan ganteng pas nembak? Kami siap bantu </p>
+        <!-- Special row: anak yatim GRATIS -->
+        <div class="price-row price-row--special reveal">
+          <div class="price-service">
+            <span class="service-name">
+              Anak Yatim
+              <span class="special-label">Special Care</span>
+            </span>
+            <span class="service-note">karena setiap anak berhak terlihat rapi dan percaya diri</span>
           </div>
-          <div class="card-price">
-            <span class="price-currency">Rp</span>
-            <span class="price-amount">2.000 </span>
-          </div>
-          <div class="card-glow"></div>
+          <div class="price-dots" aria-hidden="true"></div>
+          <span class="price-amount price-amount--free">GRATIS</span>
         </div>
 
       </div>
+
+      <p class="price-footer-note reveal">
+        * Harga dapat berubah sesuai kondisi dan panjang rambut. Hubungi kami untuk konsultasi.
+      </p>
+
     </div>
   </section>
 
-  <!-- ===== DIVIDER ===== -->
-  <div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-mark"></div>
-    <div class="divider-line"></div>
+  <!-- ===================== LUXURY DIVIDER ===================== -->
+  <div class="lux-divider" data-divider aria-hidden="true">
+    <div class="lux-divider-line"></div>
+    <span class="lux-divider-mark">✦</span>
+    <div class="lux-divider-line"></div>
   </div>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section">
+    <div class="section-wrap">
+
+      <header class="section-header reveal">
         <p class="section-eyebrow">Hubungi Kami</p>
-        <h2 class="section-title">Temukan Kami</h2>
-        <p class="section-subtitle">Booking mudah, datang langsung, atau follow dulu biar update terus.</p>
-      </div>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <p class="section-note">
+          Kami siap melayani Anda. Booking, tanya harga, atau sekadar say hello.
+        </p>
+      </header>
 
-      <div class="contact-grid">
+      <div class="contact-list">
 
-        <div class="contact-card reveal">
-          <div class="contact-icon wa-icon">
-            <!-- WhatsApp SVG Logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-              <circle cx="16" cy="16" r="16" fill="#25D366"/>
-              <path fill="#fff" d="M22.5 9.5A9.47 9.47 0 0 0 16 7a9.5 9.5 0 0 0-8.22 14.24L7 25l3.87-.78A9.5 9.5 0 0 0 25.5 16a9.47 9.47 0 0 0-3-6.5zm-6.5 14.6a7.88 7.88 0 0 1-4.02-1.1l-.29-.17-2.97.6.63-2.9-.19-.3a7.9 7.9 0 1 1 6.84 3.87zm4.33-5.9c-.24-.12-1.4-.69-1.61-.77-.22-.08-.38-.12-.54.12s-.62.77-.76.93c-.14.16-.28.18-.52.06a6.56 6.56 0 0 1-1.94-1.2 7.27 7.27 0 0 1-1.34-1.67c-.14-.24 0-.37.1-.49.1-.1.24-.27.36-.4.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.4-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 2 .86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/>
-            </svg>
+        <div class="contact-row reveal">
+          <div class="contact-icon-wrap">
+            <!-- WhatsApp CSS icon -->
+            <span class="icon-wa" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.19-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.38A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.47-7.37c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.49-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="currentColor"/>
+              </svg>
+            </span>
           </div>
           <div class="contact-info">
-            <h3>WhatsApp</h3>
-            <p>0857-0342-3186</p>
-            <p class="contact-hint">Respon cepat, booking langsung</p>
+            <p class="contact-label">WhatsApp</p>
+            <p class="contact-value">085703423186</p>
           </div>
-          <a href="https://wa.me/6285703423186?text=Halo%2C%20saya%20ingin%20booking%20di%20Barbarshop"
-             target="_blank" class="contact-btn wa-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="none" style="flex-shrink:0">
-              <circle cx="16" cy="16" r="16" fill="rgba(255,255,255,0.25)"/>
-              <path fill="#fff" d="M22.5 9.5A9.47 9.47 0 0 0 16 7a9.5 9.5 0 0 0-8.22 14.24L7 25l3.87-.78A9.5 9.5 0 0 0 25.5 16a9.47 9.47 0 0 0-3-6.5zm-6.5 14.6a7.88 7.88 0 0 1-4.02-1.1l-.29-.17-2.97.6.63-2.9-.19-.3a7.9 7.9 0 1 1 6.84 3.87zm4.33-5.9c-.24-.12-1.4-.69-1.61-.77-.22-.08-.38-.12-.54.12s-.62.77-.76.93c-.14.16-.28.18-.52.06a6.56 6.56 0 0 1-1.94-1.2 7.27 7.27 0 0 1-1.34-1.67c-.14-.24 0-.37.1-.49.1-.1.24-.27.36-.4.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.4-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 2 .86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/>
-            </svg>
-            Chat WhatsApp
-          </a>
-          <div class="card-glow"></div>
+          <a
+            href="https://wa.me/6285703423186?text=Halo%20Barbarshop!"
+            class="btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >Chat Sekarang <span class="btn-arrow">→</span></a>
         </div>
 
-        <div class="contact-card reveal">
-          <div class="contact-icon ig-icon">
-            <!-- Instagram SVG Logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-              <defs>
-                <radialGradient id="igGrad" cx="30%" cy="107%" r="150%">
-                  <stop offset="0%" stop-color="#ffd600"/>
-                  <stop offset="30%" stop-color="#ff6930"/>
-                  <stop offset="60%" stop-color="#e0366d"/>
-                  <stop offset="100%" stop-color="#9436a0"/>
-                </radialGradient>
-              </defs>
-              <rect width="32" height="32" rx="8" fill="url(#igGrad)"/>
-              <rect x="8" y="8" width="16" height="16" rx="4.5" stroke="#fff" stroke-width="2" fill="none"/>
-              <circle cx="16" cy="16" r="4" stroke="#fff" stroke-width="2" fill="none"/>
-              <circle cx="21.2" cy="10.8" r="1.2" fill="#fff"/>
-            </svg>
+        <div class="contact-divider" aria-hidden="true"></div>
+
+        <div class="contact-row reveal">
+          <div class="contact-icon-wrap">
+            <!-- Instagram CSS icon -->
+            <span class="icon-ig" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5.5" ry="5.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+              </svg>
+            </span>
           </div>
           <div class="contact-info">
-            <h3>Instagram</h3>
-            <p>@barbar_shop17</p>
-            <p class="contact-hint">Lihat hasil karya & update promo</p>
+            <p class="contact-label">Instagram</p>
+            <p class="contact-value">@barbar_shop17</p>
           </div>
-          <a href="https://www.instagram.com/barbar_shop17"
-             target="_blank" class="contact-btn ig-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" style="flex-shrink:0">
-              <defs>
-                <radialGradient id="igGrad2" cx="30%" cy="107%" r="150%">
-                  <stop offset="0%" stop-color="#ffd600"/>
-                  <stop offset="30%" stop-color="#ff6930"/>
-                  <stop offset="60%" stop-color="#e0366d"/>
-                  <stop offset="100%" stop-color="#9436a0"/>
-                </radialGradient>
-              </defs>
-              <rect width="32" height="32" rx="8" fill="url(#igGrad2)"/>
-              <rect x="8" y="8" width="16" height="16" rx="4.5" stroke="#fff" stroke-width="2" fill="none"/>
-              <circle cx="16" cy="16" r="4" stroke="#fff" stroke-width="2" fill="none"/>
-              <circle cx="21.2" cy="10.8" r="1.2" fill="#fff"/>
-            </svg>
-            Follow Instagram
-          </a>
-          <div class="card-glow"></div>
+          <a
+            href="https://www.instagram.com/barbar_shop17"
+            class="btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >Follow Kami <span class="btn-arrow">→</span></a>
+        </div>
+
+        <div class="contact-divider" aria-hidden="true"></div>
+
+        <div class="contact-row reveal">
+          <div class="contact-icon-wrap">
+            <!-- Clock CSS icon -->
+            <span class="icon-clock" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Jam Operasional</p>
+            <p class="contact-value">09:00 – 21:00 WIB · Setiap Hari</p>
+          </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <span class="logo-mark"></span>
-        <span class="logo-text">barbar<span class="logo-accent">shop</span></span>
-      </div>
-      <p class="footer-tagline">Elegant Style for Modern Men</p>
+    <div class="footer-line" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <p class="footer-brand">barbarshop</p>
+      <p class="footer-copy">
+        &copy; 2026 barbarshop — Premium Barbershop
+      </p>
       <div class="footer-socials">
-        <a href="https://wa.me/6285703423186" target="_blank" class="social-link" aria-label="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="22" height="22" fill="none">
-            <circle cx="16" cy="16" r="16" fill="#25D366"/>
-            <path fill="#fff" d="M22.5 9.5A9.47 9.47 0 0 0 16 7a9.5 9.5 0 0 0-8.22 14.24L7 25l3.87-.78A9.5 9.5 0 0 0 25.5 16a9.47 9.47 0 0 0-3-6.5zm-6.5 14.6a7.88 7.88 0 0 1-4.02-1.1l-.29-.17-2.97.6.63-2.9-.19-.3a7.9 7.9 0 1 1 6.84 3.87zm4.33-5.9c-.24-.12-1.4-.69-1.61-.77-.22-.08-.38-.12-.54.12s-.62.77-.76.93c-.14.16-.28.18-.52.06a6.56 6.56 0 0 1-1.94-1.2 7.27 7.27 0 0 1-1.34-1.67c-.14-.24 0-.37.1-.49.1-.1.24-.27.36-.4.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.4-.06-.12-.54-1.3-.74-1.78-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 2 .86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.1.16 1.51.1.46-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/barbar_shop17" target="_blank" class="social-link" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="22" height="22">
-            <defs>
-              <radialGradient id="igFooter" cx="30%" cy="107%" r="150%">
-                <stop offset="0%" stop-color="#ffd600"/>
-                <stop offset="30%" stop-color="#ff6930"/>
-                <stop offset="60%" stop-color="#e0366d"/>
-                <stop offset="100%" stop-color="#9436a0"/>
-              </radialGradient>
-            </defs>
-            <rect width="32" height="32" rx="8" fill="url(#igFooter)"/>
-            <rect x="8" y="8" width="16" height="16" rx="4.5" stroke="#fff" stroke-width="2" fill="none"/>
-            <circle cx="16" cy="16" r="4" stroke="#fff" stroke-width="2" fill="none"/>
-            <circle cx="21.2" cy="10.8" r="1.2" fill="#fff"/>
-          </svg>
-        </a>
+        <a
+          href="https://wa.me/6285703423186"
+          class="footer-link"
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp"
+        >WA</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a
+          href="https://www.instagram.com/barbar_shop17"
+          class="footer-link"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >IG</a>
       </div>
-      <div class="footer-divider"></div>
-      <p class="footer-copy"> 2026 <strong>barbarshop</strong>  Premium Barbershop. All rights reserved.</p>
     </div>
   </footer>
 
