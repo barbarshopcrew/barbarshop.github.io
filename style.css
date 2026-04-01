@@ -148,8 +148,9 @@ ul { list-style: none; }
    ============================================================ */
 .navbar {
   position: fixed;
-  inset-block-start: 0;
-  inset-inline: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 500;
   background: rgba(255,255,255,0.88);
   backdrop-filter: blur(18px);
@@ -275,7 +276,7 @@ ul { list-style: none; }
    HERO
    ============================================================ */
 .hero {
-  min-height: 100svh;
+  min-height: 100vh;
   padding: 120px var(--section-px) 80px;
   background: var(--white);
   position: relative;
@@ -901,8 +902,9 @@ ul { list-style: none; }
   .nav-menu {
     display: none;
     position: fixed;
-    inset-block-start: 66px;
-    inset-inline: 0;
+    top: 66px;
+    left: 0;
+    right: 0;
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(16px);
     flex-direction: column;
